@@ -35,3 +35,29 @@
   vertical-align: middle;
   margin-right: .25rem;
 }
+
+.input-section__button-area {
+  margin-top: 2.125rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-section__button-area button {
+  width: 100%;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  font-size: 1rem;
+}
+
+.input-section__button-area__encrypt {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  border: none;
+}
+
+.input-section__button-area__decrypt {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+}

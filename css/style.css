@@ -13,6 +13,7 @@
   --secondary-color: rgba(10, 56, 113, 1);
   --font: 'Inter', 'sans serif';
   --third-color: rgba(52, 58, 64, 1);
+  --white-color: rgba(255, 255, 255, 1);
 }
 
 body {
