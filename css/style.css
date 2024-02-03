@@ -12,6 +12,7 @@
   --primary-color: rgba(243, 245, 252, 1);
   --secondary-color: rgba(10, 56, 113, 1);
   --font: 'Inter', 'sans serif';
+  --third-color: rgba(52, 58, 64, 1);
 }
 
 body {
@@ -21,6 +22,6 @@ body {
 }
 
 main {
-  min-width: 100vw;
+  max-width: 100vw;
   min-height: 89vh;
 }

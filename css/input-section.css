@@ -24,3 +24,14 @@
   color: var(--secondary-color);
 }
 
+.input-section > p {
+  color: var(--third-color);
+  font-size: .75rem;
+}
+
+.input-section > p::before {
+  content: url('../assets/images/Alert.svg');
+  width: 1rem;
+  vertical-align: middle;
+  margin-right: .25rem;
+}
