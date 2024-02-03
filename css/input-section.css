@@ -1,0 +1,26 @@
+.input-section {
+  padding: 1.5rem 1rem;
+}
+
+.input-section > textarea {
+  width: 100%;
+  height: 20rem;
+  max-height: 39rem;
+  margin-top: 1rem;
+  color: var(--secondary-color);
+  font-size: 2rem;
+  word-spacing: .1rem;
+  line-height: 3rem;
+  border: none;
+  background-color: transparent;
+  resize: none;
+}
+
+.input-section > textarea:focus {
+  outline: 0;
+}
+
+.input-section > textarea::placeholder {
+  color: var(--secondary-color);
+}
+
