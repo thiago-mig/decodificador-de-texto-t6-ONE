@@ -1,0 +1,14 @@
+footer {
+  margin-top: 2rem;
+  padding: .5rem;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-between;
+  background-color: var(--secondary-color);
+}
+
+footer > * {
+  color: var(--white-color);
+  font-size: .5rem;
+}
+
