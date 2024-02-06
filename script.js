@@ -1,12 +1,13 @@
 const textInput = document.querySelector('textarea');
 const encryptBtn = document.querySelector('.encrypt');
+const decryptBtn = document.querySelector('.decrypt');
 const outputContainerDefault = document.querySelector('.output-section__default');
 const outputContainerResult = document.querySelector('.output-section__result')
 const resultParagraph = document.querySelector('.result');
 
-const encrypt = (value) => {
+const encrypt = (text) => {
   let encryptedText = '';
-  for (let letter of textInput.value) {
+  for (let letter of text) {
     switch (letter) {
       case 'a':
         encryptedText += 'ai';
@@ -31,12 +32,21 @@ const encrypt = (value) => {
   return encryptedText;
 };
 
-const showResult = () => {
+const decrypt = (text) => {
+  let keys = ['ai', 'enter', 'imes', 'ober', 'ufat'];
+  let defaultLetters = ['a', 'e', 'i', 'o', 'u'];
+  for (const key in keys) {
+    text = text.replaceAll(keys[key], defaultLetters[key]);
+  }
+  return text;
+}
+
+const showResult = (method) => {
   if(outputContainerResult.classList.contains('hidden')){
     outputContainerDefault.classList.add('hidden');
     outputContainerResult.classList.remove('hidden');
   }
-  resultParagraph.innerText = encrypt(textInput.value);
+  resultParagraph.innerText = method(textInput.value);
   textInput.value = '';
 }
 
@@ -51,8 +61,16 @@ const resetAll = () => {
 
 encryptBtn.addEventListener('click', () =>{
     if(textInput.value.length !== 0) {
-      showResult();
+      showResult(encrypt);
     } else {
       resetAll();
     }
 });
+
+decryptBtn.addEventListener('click', () => {
+  if (textInput.value.length !==0) {
+    showResult(decrypt);
+  } else {
+    resetAll();
+  }
+})

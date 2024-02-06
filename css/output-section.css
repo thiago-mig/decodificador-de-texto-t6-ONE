@@ -35,6 +35,7 @@
   font-size: 1.5rem;
   color: var(--result-color);
   line-height: 2.25rem;
+  overflow-wrap: break-word;
 }
 
 .output-section__result__btn-container {
