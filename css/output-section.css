@@ -27,11 +27,11 @@
   padding: .5rem 1rem;
 }
 
-.output-section__result__result-container {
+.output-section__result-container {
   max-height: 26rem;
   overflow: scroll;
 }
-.output-section__result__result-container p {
+.output-section__result-container p {
   font-size: 1.5rem;
   color: var(--result-color);
   line-height: 2.25rem;
