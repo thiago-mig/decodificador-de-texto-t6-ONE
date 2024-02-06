@@ -4,34 +4,31 @@ const outputContainerDefault = document.querySelector('.output-section__default'
 const outputContainerResult = document.querySelector('.output-section__result')
 const resultParagraph = document.querySelector('.result');
 
-
 const encrypt = (value) => {
   let encryptedText = '';
-  if (value.length !== 0) {
-    for (let letter of textInput.value) {
-      switch (letter) {
-        case 'a':
-            encryptedText += 'ai';
-            break;
-        case 'e':
-            encryptedText += 'enter';
-            break;
-        case 'i':
-            encryptedText += 'imes';
-            break;
-        case 'o':
-            encryptedText += 'ober';
-            break;
-        case 'u':
-            encryptedText += 'ufat';
-            break;
-        default:
-            encryptedText += letter;
-            break;
-      }
+  for (let letter of textInput.value) {
+    switch (letter) {
+      case 'a':
+        encryptedText += 'ai';
+        break;
+      case 'e':
+        encryptedText += 'enter';
+        break;
+      case 'i':
+        encryptedText += 'imes';
+        break;
+      case 'o':
+        encryptedText += 'ober';
+        break;
+      case 'u':
+        encryptedText += 'ufat';
+        break;
+      default:
+        encryptedText += letter;
+        break;
     }
-    return encryptedText;
-  }  
+  }
+  return encryptedText;
 };
 
 const showResult = () => {
@@ -43,8 +40,19 @@ const showResult = () => {
   textInput.value = '';
 }
 
-
+const resetAll = () => {
+    if(outputContainerDefault.classList.contains('hidden')) {
+      outputContainerDefault.classList.remove('hidden');
+    }
+    if(!outputContainerResult.classList.contains('hidden')) {
+      outputContainerResult.classList.add('hidden');
+    }
+  }
 
 encryptBtn.addEventListener('click', () =>{
-    showResult();
+    if(textInput.value.length !== 0) {
+      showResult();
+    } else {
+      resetAll();
+    }
 });
