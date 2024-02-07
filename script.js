@@ -4,6 +4,7 @@ const decryptBtn = document.querySelector('.decrypt');
 const outputContainerDefault = document.querySelector('.output-section__default');
 const outputContainerResult = document.querySelector('.output-section__result')
 const resultParagraph = document.querySelector('.result');
+const copyBtn = document.querySelector('.copyBtn');
 
 const encrypt = (text) => {
   let encryptedText = '';
@@ -57,7 +58,11 @@ const resetAll = () => {
     if(!outputContainerResult.classList.contains('hidden')) {
       outputContainerResult.classList.add('hidden');
     }
-  }
+}
+
+const copyFunc = () => {
+  navigator.clipboard.writeText(resultParagraph.innerText);
+}
 
 encryptBtn.addEventListener('click', () =>{
     if(textInput.value.length !== 0) {
@@ -73,4 +78,6 @@ decryptBtn.addEventListener('click', () => {
   } else {
     resetAll();
   }
-})
+});
+
+copyBtn.addEventListener('click', copyFunc);
