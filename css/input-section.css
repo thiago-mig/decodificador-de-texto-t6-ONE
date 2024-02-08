@@ -38,6 +38,7 @@
 }
 
 .input-section__button-area {
+  width: 100%;
   margin-top: 1rem;
   display: flex;
   flex-wrap: wrap;
@@ -62,4 +63,16 @@
   background-color: transparent;
   color: var(--secondary-color);
   border: 2px solid var(--secondary-color);
+}
+
+@media screen and (min-width: 768px) {
+  .input-section > textarea {
+    height: 30rem;
+  }
+
+  .input-section__button-area {
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: nowrap;
+  }
 }
