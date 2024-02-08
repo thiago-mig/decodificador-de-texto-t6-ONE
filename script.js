@@ -2,7 +2,8 @@ const textInput = document.querySelector('textarea');
 const encryptBtn = document.querySelector('.encrypt');
 const decryptBtn = document.querySelector('.decrypt');
 const outputContainerDefault = document.querySelector('.output-section__default');
-const outputContainerResult = document.querySelector('.output-section__result')
+const outputContainerResult = document.querySelector('.output-section__result');
+const copyBtnContainer = document.querySelector('.output-section__result__btn-container');
 const resultParagraph = document.querySelector('.result');
 const copyBtn = document.querySelector('.copyBtn');
 
@@ -52,32 +53,43 @@ const showResult = (method) => {
 }
 
 const resetAll = () => {
-    if(outputContainerDefault.classList.contains('hidden')) {
-      outputContainerDefault.classList.remove('hidden');
-    }
-    if(!outputContainerResult.classList.contains('hidden')) {
-      outputContainerResult.classList.add('hidden');
-    }
+  if(outputContainerDefault.classList.contains('hidden')) {
+    outputContainerDefault.classList.remove('hidden');
+  }
+  if(!outputContainerResult.classList.contains('hidden')) {
+    outputContainerResult.classList.add('hidden');
+  }
 }
 
 const copyFunc = () => {
   navigator.clipboard.writeText(resultParagraph.innerText);
 }
 
+const showTooltip = () => {
+  const tooltip = document.createElement('span');
+  tooltip.className = 'tooltip';
+  tooltip.innerText = 'Texto copiado para área de transferência';
+  copyBtnContainer.insertBefore(tooltip, copyBtn);
+  setTimeout(() => tooltip.remove(), 2500);
+}
+
 encryptBtn.addEventListener('click', () =>{
-    if(textInput.value.length !== 0) {
-      showResult(encrypt);
-    } else {
-      resetAll();
-    }
+  if(textInput.value.length !== 0) {
+    showResult(encrypt);
+  } else {
+    resetAll();
+  }
 });
 
 decryptBtn.addEventListener('click', () => {
-  if (textInput.value.length !==0) {
+  if (textInput.value.length !== 0) {
     showResult(decrypt);
   } else {
     resetAll();
   }
 });
 
-copyBtn.addEventListener('click', copyFunc);
+copyBtn.addEventListener('click', () => {
+  copyFunc();
+  showTooltip();
+});
