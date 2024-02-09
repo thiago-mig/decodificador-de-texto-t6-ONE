@@ -48,7 +48,7 @@ main {
   main {
     flex-direction: row;
     justify-content: flex-start;
-    gap: 5rem;
+    /* gap: 5rem; */
     height: 100%;
     position: relative;
   }
