@@ -76,3 +76,19 @@
     flex-wrap: nowrap;
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .input-section {
+    width: 42.6rem;
+    padding: 2rem 0 0 8rem;
+    width: 70%;
+    max-width: 46.8rem;
+    max-height: 50rem;
+    margin: 0;
+  }
+
+  .input-section > textarea {
+    margin: 0;
+    height: 80%;
+  }
+}
