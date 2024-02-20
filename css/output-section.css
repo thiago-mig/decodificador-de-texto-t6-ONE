@@ -33,7 +33,7 @@
 
 .output-section__result-container {
   max-height: 26rem;
-  overflow: scroll;
+  overflow: auto;
 }
 .output-section__result-container p {
   font-size: 1.5rem;
@@ -80,7 +80,7 @@
 @media screen and (min-width: 1024px) {
   .output-section {
     width: 25%;
-    max-width: 25rem;
+    width: 25rem;
     max-height: 60rem;
     height: 105%;
     display: flex;
@@ -102,10 +102,11 @@
   }
 
   .output-section__default figcaption {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     max-height: 21rem;
-    max-width: 21rem;
   }
 
   .output-section__default figcaption img {
@@ -115,13 +116,25 @@
 
   .output-section__result {
     margin: 0 auto;
-    height:98%;
-    width: 98%;
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
     padding: .5rem 2rem;
+  }
+
+  .output-section__result-container {
+    max-height: 36rem;
+  }
+
+  .output-section__result__btn-container {
+    height: 8.7rem;
+  }
+
+  .tooltip {
+    top: -.5rem;
   }
 
 }
