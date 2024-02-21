@@ -126,7 +126,8 @@
   }
 
   .output-section__result-container {
-    max-height: 36rem;
+    max-height: 32rem;
+    height: 31.25rem;
   }
 
   .output-section__result__btn-container {
